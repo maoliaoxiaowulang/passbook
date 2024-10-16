@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/iconfont.css">
+    
+</head>
+<body>
+    
+    <!-- 顶部开始 -->
+    <div class="header">
+            <ul class="header-title">
+                <li>健康计算器</li>
+            </ul>
+        <div class="header-wrap">
+            <ul class="header-sentence">
+                <li>千金难买健康身，一日无病是良辰</li>
+            </ul>
+        </div>
+        
+        
+    </div>
+    <!-- 顶部结束 -->
+
+    
+    <!-- 左侧导航开始 -->
+    <div class="left-nav">
+        <div class="left-nav-slide">
+            <ul>
+                <li id="zhuyebutton"><a href="#" onclick="showDiv('zhuye')">主页<i class="iconfont">&#xe60a;</i></a></li>
+                <li id="bmibutton"><a href="#" onclick="showDiv('bmi')">BMI计算器<i class="iconfont">&#xe60a;</i></a></li>
+                <li id="kaluliconsumebutton"><a href="#" onclick="showDiv('kaluliconsume')">卡路里日耗计算器<i class="iconfont">&#xe60a;</i></a></li>
+                <li id="kalulisportsbutton"><a href="#" onclick="showDiv('kalulisports')">运动减卡计算器<i class="iconfont">&#xe60a;</i></a></li>
+                <li><a href="#" onclick="showDiv('kalulichange')">卡路里换算器<i class="iconfont">&#xe60a;</i></a></li>
+                <li><a href="#" onclick="showDiv('foodsort')">食物热量排序器<i class="iconfont">&#xe60a;</i></a></li>
+                <li id="yingyangbutton"><a href="#" onclick="showDiv('yingyang')">营养元素计算器<i class="iconfont">&#xe60a;</i></a></li>
+                <li id="yichuanbutton"><a href="#" onclick="showDiv('yichuan')">遗传学计算器<i class="iconfont">&#xe60a;</i></a></li>
+                <li id="heartbutton"><a href="#" onclick="showDiv('heart')">心理健康计算器<i class="iconfont">&#xe60a;</i></a></li>
+                <li id="healthyyybutton"><a href="#" onclick="showDiv('healthylife')">健康生活计算器<i class="iconfont">&#xe60a;</i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 左侧导航结束 -->
+
+    <!-- 右侧黑框 -->
+    <div class="right-nav"></div>
+    <!-- 右侧黑框结束 -->
+
+    <!-- 图片开始 -->
+    <div class="top-picture">
+        <img src="images/health.png" alt="健康计算器" style="width: 100%;">
+   </div>
+   <!-- 图片结束 -->
+   
+
+   
+<!-- 主页开始 -->
+<div class="content active"id="zhuye">
+    <!-- 文字开始 -->
+    <div class="top-word">
+        <p><b><span style="font-size: 30px;">欢迎使用健康计算器！</span><br>我们希望您可以通过这款计算器去评估自己的健康水准以及生活习惯，在这之后我们会为您提供一些小建议以及进行一些科普。<br>下面您可以使用您想计算的功能，祝您有美好的体验！</b></p>
+    </div>
+    <!-- 文字结束 -->
+    <div class="main">
+    <!-- 轮播图开始 -->
+    <div class="banner ">
+        <div class="wrap banner-box">
+            <div class="banner-slide">
+                <div class="slide">
+                    <a href="javascript:;"><!-- 页面不跳转 -->
+                        <img src="./images/1.jpg" alt="picture" class="img">
+                    </a>
+                    <a href="javascript:;" class="prev">&#xe6c7;</a>
+                    <a href="javascript:;" class="next">&#xe507;</a>
+                    <ul class="banner-btn">
+                        <li class="active"></li>   <!-- class可以省略 -->
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                 
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 轮播图结束 -->
+
+    <!-- 基本计算器开始 -->
+    <div class="basic-calculator ">
+        <input type="text" id="display" disabled />
+        <div class="buttons">
+            <button onclick="clearDisplay()"class="delete">清空</button>
+            <button onclick="deleteLast()"class="delete">倒退</button>
+            <button class="symbol"onclick="appendToDisplay('+')">+</button>
+            <br>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('-')"class="symbol">-</button>
+            <br>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="symbol"onclick="appendToDisplay('*')">×</button>
+            <br>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="symbol"onclick="appendToDisplay('/')">÷</button>
+            <br>
+             <button onclick="appendToDisplay('0')">0</button>
+            
+            <button onclick="appendToResult('.')">.</button> <!-- 小数点按钮 -->
+           <button class="equals" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <!-- 基本计算器结束 -->
+  </div>
+</div>
+<!-- 主页结束 -->
+
+
+<!-- BMI计算器开始 -->
+<div id="bmi" class="content">
+    <div class="bmicontent">
+        <div class="bmi-word">
+            <p><b><span style="font-size: 26px;">欢迎使用BMI计算器!<br>您可以通过输入您的身高和体重来计算您的BMI</span></b><br><br>使用方法：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.输入您的体重（单位：千克）<br>2.点击and按钮  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.输入您的身高（单位：米）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.点击BMI计算按钮   </p>
+            <br><p><span style="color:rgb(176, 102, 5);"><b>我国BMI计算标准：</b></span></p>
+            <p><span style="color: rgb(176, 102, 5);">过轻：BMI < 18.5<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正常：18.5 ≤ BMI < 24.0<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;超重：24.0 ≤ BMI < 28.0<br>
+                肥胖：BMI ≥ 28.0</span></p>
+        </div>
+        <div class="bmi-calculator">
+            <input type="text" id="bmidisplay" disabled />
+            <div class="buttons">
+                <button onclick="clearBmidisplay()"class="bmi-number-button">清空</button>
+                <button onclick="deleteBmiLast()"class="bmi-number-button">倒退</button>
+                <button class="bmi-number-button"onclick="splitInput()">and</button>
+                <br>
+                <button onclick="appendToBmidisplay('1')"class="bmi-number-button">1</button>
+                <button onclick="appendToBmidisplay('2')"class="bmi-number-button">2</button>
+                <button onclick="appendToBmidisplay('3')"class="bmi-number-button">3</button>
+                <br>
+                <button onclick="appendToBmidisplay('4')"class="bmi-number-button">4</button>
+                <button onclick="appendToBmidisplay('5')"class="bmi-number-button">5</button>
+                <button onclick="appendToBmidisplay('6')"class="bmi-number-button">6</button>
+                <br>
+                <button onclick="appendToBmidisplay('7')"class="bmi-number-button">7</button>
+                <button onclick="appendToBmidisplay('8')"class="bmi-number-button">8</button>
+                <button onclick="appendToBmidisplay('9')"class="bmi-number-button">9</button>
+                <br>
+                 <button onclick="appendToBmidisplay('0')">0</button>
+                
+                <button onclick="appendToBmiResult('.')">.</button> <!-- 小数点按钮 -->
+               <button class="equals" onclick="BmiLast()">BMI计算</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BMI计算器结束 -->
+
+
+
+
+<!-- 卡路里平均消耗计算器开始 -->
+<div id="kaluliconsume" class="content">
+    <div class="kalulicontent">
+        <div class="kaluliconsume-word">
+            <p><span style="font-size: 26px;"><b>欢迎使用卡路里平均消耗计算器!</b>
+                </span><br>使用方法：<br>请您依次输入您的性别、身高、体重、年龄以及运动情况，我们会给您估算您的卡路里每日平均消耗情况。 
+            </p>
+        </div>
+    <div class="kaluli-choose-content">
+        <p><span style="color: rgb(67, 103, 135);">性别：</span>
+            <input type="radio" name="kaluli-gender" value="1">男
+            <input type="radio" name="kaluli-gender" value="2">女</p>
+        <p><span style="color: rgb(67, 103, 135);">身高：</span>
+                <input type="text" name="kaluli-height">cm</p>
+        <p><span style="color: rgb(67, 103, 135);">体重：</span>
+                    <input type="text" name="kaluli-weight">kg</p>    
+        <p><span style="color: rgb(67, 103, 135);">年龄：</span>
+                        <input type="text" name="kaluli-age">岁</p>     
+        <p><span style="color: rgb(67, 103, 135);">运动情况：</span>
+            <input type="radio" name="kaluli-sportscondition" id="kaluli-sportscondition1">几乎不（经常坐着的工作,且平时几乎不运动）
+            <input type="radio" name="kaluli-sportscondition" id="kaluli-sportscondition2">少量（经常坐着的工作，偶尔运动）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="kaluli-sportscondition" id="kaluli-sportscondition3">经常（很多身体活动的工作，平时经常锻炼）&nbsp;
+            <input type="radio" name="kaluli-sportscondition" id="kaluli-sportscondition4">大量（很多身体活动的工作，平时大量锻炼）</p>   
+        <button onclick="kaluliconsumeCalculate()">计算</button>        
+    </div>    
+    <div class="daykaluli-display">
+        <p>您平均每日消耗卡路里<input type="text" id="kaluli-dailyconsume"disabled>卡</p>
+    </div>
+    </div>
+</div>
+<!-- 卡路里平均消耗计算器结束 -->
+
+
+
+<!-- 卡路里运动消耗计算器开始 -->
+<div id="kalulisports" class="content">
+    <div class="kalulisportscontent">
+        <div class="kalulisports-word">
+            <p><span style="font-size: 26px;"><b>欢迎使用卡路里运动消耗计算器!</b></span><br>以下是十种消耗卡路里的有效运动方式，您可以选择不同的运动查看其介绍，并输入运动时长计算卡路里的消耗情况:</p>
+            <a href="#" onclick="showsportsDiv('sports-kaihetiao')">开合跳</a>
+            <a href="#" onclick="showsportsDiv('sports-paobu')">跑步</a>
+            <a href="#" onclick="showsportsDiv('sports-zixingche')">自行车</a>
+            <a href="#" onclick="showsportsDiv('sports-youyong')">游泳</a>
+            <a href="#" onclick="showsportsDiv('sports-tiaosheng')">跳绳</a>
+            <a href="#" onclick="showsportsDiv('sports-yumaoqiu')">羽毛球</a>
+            <a href="#" onclick="showsportsDiv('sports-wuyangyundong')">无氧运动</a>
+            <a href="#" onclick="showsportsDiv('sports-yujia')">瑜伽</a>
+            <a href="#" onclick="showsportsDiv('sports-fuzhong')">负重训练</a>
+            <a href="#" onclick="showsportsDiv('sports-wudao')">舞蹈</a>
+        </div>
+        <div class="sports-introduction sportsactive"id="nothing">
+            <p><b>请选择您想了解的运动</b></p>        
+        </div>
+        
+        <!-- 开合跳 -->
+        <div class="sports-introduction" id="sports-kaihetiao" value="10">
+             <p style="text-align: center;font-size: 26px;"><b>开合跳</b></p>
+             <img src="./images/1.1.jpg" alt="picture" class="sports-img">
+             <div class="sports-word-div">
+             <p><br>开合跳是一种全身运动，通常作为热身或有氧运动的一部分。运动员站立，双脚并拢，双臂放在身体两侧。跳跃时，双脚向两侧分开，双臂举过头顶，随后回到起始位置。<br><br>卡路里消耗：<br>每分钟大约消耗 8-12卡路里，根据体重和运动强度不同而变化。</p>
+            </div>
+        </div>
+        <!-- 跑步 -->
+        <div class="sports-introduction" id="sports-paobu" value="12.5">
+            <p style="text-align: center;font-size: 26px;"><b>跑步</b></p>
+            <img src="./images/1.2.webp" alt="picture" class="sports-img">
+            <div class="sports-word-div">
+            <p><br>跑步是一种非常流行的有氧运动，能够提高心肺功能和耐力。可以在室外跑步或在跑步机上进行，速度和强度可以根据个人水平调整。<br><br>卡路里消耗：<br>每分钟大约消耗 10-15卡路里，具体取决于速度（慢跑、中跑或快跑）、体重和地形。</p>
+           </div>
+       </div>
+       <!-- 自行车 -->
+       <div class="sports-introduction" id="sports-zixingche" value="7.5">
+        <p style="text-align: center;font-size: 26px;"><b>自行车</b></p>
+        <img src="./images/1.3.webp" alt="picture" class="sports-img">
+        <div class="sports-word-div">
+        <p><br>骑自行车是一种低冲击力的有氧运动，适合各种年龄和体能水平。可以在户外骑行或使用固定式健身车。骑行有助于增强腿部力量和心肺耐力。<br><br>卡路里消耗：<br>每分钟大约消耗 5-10卡路里，依赖于骑行的强度（轻松骑行或剧烈骑行）和体重。</p>
+       </div>
+   </div>
+       <!-- 游泳 -->
+       <div class="sports-introduction" id="sports-youyong" value="10">
+        <p style="text-align: center;font-size: 26px;"><b>游泳</b></p>
+        <img src="./images/1.4.jpg" alt="picture" class="sports-img">
+        <div class="sports-word-div">
+        <p><br>游泳是一项全身性运动，能够增强心肺功能，同时锻炼肌肉。不同泳姿（如自由泳、蛙泳、蝶泳和仰泳）可针对不同肌肉群。<br><br>卡路里消耗：<br>每分钟大约消耗 7-13卡路里，具体取决于泳姿、游泳强度和体重。</p>
+       </div>
+   </div>
+   <!-- 跳绳 -->
+   <div class="sports-introduction" id="sports-tiaosheng" value="12.5">
+    <p style="text-align: center;font-size: 26px;"><b>跳绳</b></p>
+    <img src="./images/1.5.webp" alt="picture" class="sports-img">
+    <div class="sports-word-div">
+    <p><br>跳绳是一项简单而有效的有氧运动，能够提高心率，增强协调性和耐力。适合各种场合，可以随时进行.<br><br>卡路里消耗：<br>每分钟大约消耗 10-15卡路里，具体取决于跳绳的速度和强度。</p>
+   </div>
+</div>
+<!-- 羽毛球 -->
+<div class="sports-introduction" id="sports-yumaoqiu" value="7">
+    <p style="text-align: center;font-size: 26px;"><b>羽毛球</b></p>
+    <img src="./images/1.6.webp" alt="picture" class="sports-img">
+    <div class="sports-word-div">
+    <p><br>羽毛球是一种快速的球类运动，强调反应速度、协调性和体力。比赛时，运动员需要快速移动和改变方向。<br><br>卡路里消耗：<br>每分钟大约消耗 6-8卡路里，具体取决于运动强度和持续时间。</p>
+   </div>
+</div>
+<!-- 无氧运动 -->
+<div class="sports-introduction" id="sports-wuyangyundong" value="16">
+    <p style="text-align: center;font-size: 26px;"><b>无氧运动</b></p>
+    <img src="./images/1.7.jpg" alt="picture" class="sports-img">
+    <div class="sports-word-div">
+    <p><br>高强度间歇训练是一种以短时间高强度运动与短暂休息交替进行的训练方式。它能够在较短时间内达到高效的锻炼效果，适合于提高耐力和燃烧脂肪。<br><br>卡路里消耗：<br>每分钟大约消耗 12-20卡路里，具体取决于运动的强度和种类。</p>
+   </div>
+</div>
+<!-- 瑜伽 -->
+<div class="sports-introduction" id="sports-yujia" value="5">
+    <p style="text-align: center;font-size: 26px;"><b>瑜伽</b></p>
+    <img src="./images/1.8.webp" alt="picture" class="sports-img">
+    <div class="sports-word-div">
+    <p><br>瑜伽是一种结合身体姿势、呼吸控制和冥想的运动，旨在提高柔韧性、力量和心理健康。包括不同的体式（Asanas）和流派（如哈他瑜伽、热瑜伽等）。<br><br>卡路里消耗：<br>每分钟大约消耗 3-7卡路里，具体取决于瑜伽的类型和强度。</p>
+   </div>
+</div>
+<!-- 负重训练 -->
+<div class="sports-introduction" id="sports-fuzhong" value="7.5">
+    <p style="text-align: center;font-size: 26px;"><b>负重运动</b></p>
+    <img src="./images/1.9.jpg" alt="picture" class="sports-img">
+    <div class="sports-word-div">
+    <p><br>负重训练是通过使用杠铃、哑铃或其他器械进行的力量训练，旨在增强肌肉力量和耐力。可以针对不同肌肉群进行训练。<br><br>卡路里消耗：<br>每分钟大约消耗 5-10卡路里，具体取决于训练的强度和持续时间。</p>
+   </div>
+</div>
+<!-- 舞蹈 -->
+<div class="sports-introduction" id="sports-wudao" value="7.5">
+    <p style="text-align: center;font-size: 26px;"><b>舞蹈</b></p>
+    <img src="./images/1.10.webp" alt="picture" class="sports-img">
+    <div class="sports-word-div">
+    <p><br>舞蹈是一种表达情感和艺术形式的运动，涵盖各种风格（如芭蕾、街舞、拉丁舞等）。它不仅锻炼身体，还能提升心情。<br><br>卡路里消耗：<br>每分钟大约消耗 5-10卡路里，具体取决于舞蹈类型和强度。</p>
+   </div>
+</div>
+
+
+
+        <div class="sports-calculator ">
+            <input type="text" id="sports-display" disabled />
+            <div class="buttons">
+                <button onclick="clearsportsDisplay()"class="delete">清空</button>
+                <button onclick="deletesportsLast()"class="delete">倒退</button>
+                <br>
+                <button onclick="appendTosportsDisplay('1')">1</button>
+                <button onclick="appendTosportsDisplay('2')">2</button>
+                <button onclick="appendTosportsDisplay('3')">3</button>
+                <br>
+                <button onclick="appendTosportsDisplay('4')">4</button>
+                <button onclick="appendTosportsDisplay('5')">5</button>
+                <button onclick="appendTosportsDisplay('6')">6</button>
+                <br>
+                <button onclick="appendTosportsDisplay('7')">7</button>
+                <button onclick="appendTosportsDisplay('8')">8</button>
+                <button onclick="appendTosportsDisplay('9')">9</button>
+                <br>
+                 <button onclick="appendTosportsDisplay('0')">0</button>
+                 <button onclick="appendTosportsResult('.')">.</button> <!-- 小数点按钮 -->
+                 <button class="equals" onclick="calculatesportsResult()">=</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 卡路里运动消耗计算器结束 -->
+
+
+<!-- 卡路里换算器开始 -->
+<div id="kalulichange" class="content">
+    <div class="changecontent">
+        <div class="kalulichange-word">
+            <p><span style="font-size: 32px;"><b>欢迎使用卡路里换算器!</b> </span><br>我们在这里为您提供了卡路里与重量以及卡路里与能量的换算功能<br></p>
+        </div>
+        <div class="kalulichange-caculator-title1">
+            <p>卡路里——重量换算器</p>
+            <div class="kalulichange-calculator1">
+
+                <input type="text" id="kaluliweightchangedisplay" disabled />
+                <div class="buttons">
+                    <button onclick="clearweightDisplay()"class="delete">清空</button>
+                <button onclick="deleteweightLast()"class="delete">倒退</button>
+                <br>
+                <button onclick="appendToweightDisplay('1')">1</button>
+                <button onclick="appendToweightDisplay('2')">2</button>
+                <button onclick="appendToweightDisplay('3')">3</button>
+                <br>
+                <button onclick="appendToweightDisplay('4')">4</button>
+                <button onclick="appendToweightDisplay('5')">5</button>
+                <button onclick="appendToweightDisplay('6')">6</button>
+                <br>
+                <button onclick="appendToweightDisplay('7')">7</button>
+                <button onclick="appendToweightDisplay('8')">8</button>
+                <button onclick="appendToweightDisplay('9')">9</button>
+                <br>
+                 <button onclick="appendToweightDisplay('0')">0</button>
+                 <button onclick="appendToweightResult('.')">.</button> <!-- 小数点按钮 -->
+                 <button class="equals" onclick="calculateweightResult()">=</button>
+                </div>
+            </div>
+        </div>
+        <div class="kalulichange-caculator-title2">
+            <p>卡路里——焦耳换算器</p>
+            <div class="kalulichange-calculator2">
+
+                <input type="text" id="kalulienergychangedisplay" disabled />
+                <div class="buttons">
+                    <button onclick="clearenergyDisplay()"class="delete">清空</button>
+                <button onclick="deleteenergyLast()"class="delete">倒退</button>
+                <br>
+                <button onclick="appendToenergyDisplay('1')">1</button>
+                <button onclick="appendToenergyDisplay('2')">2</button>
+                <button onclick="appendToenergyDisplay('3')">3</button>
+                <br>
+                <button onclick="appendToenergyDisplay('4')">4</button>
+                <button onclick="appendToenergyDisplay('5')">5</button>
+                <button onclick="appendToenergyDisplay('6')">6</button>
+                <br>
+                <button onclick="appendToenergyDisplay('7')">7</button>
+                <button onclick="appendToenergyDisplay('8')">8</button>
+                <button onclick="appendToenergyDisplay('9')">9</button>
+                <br>
+                 <button onclick="appendToenergyDisplay('0')">0</button>
+                 <button onclick="appendToenergyResult('.')">.</button> <!-- 小数点按钮 -->
+                 <button class="equals" onclick="calculateenergyResult()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 卡路里换算器结束 -->
+
+<!-- 营养元素计算器开始 -->
+<div id="yingyang" class="content">
+    <div class="yingyangcontent">
+        
+            <div id="select-top2">
+              <form class="seletor2" id="food-type-seletor2">
+                食物种类:
+                <select id="foodselector2">
+                  <option class="ft2" onclick="showtype()" value="all">全部</option>
+                  <option class="ft2" onclick="showtype()" value="meat">肉类</option>
+                  <option class="ft2" onclick="showtype()" value="fruit">水果</option>
+                  <option class="ft2" onclick="showtype()" value="veg">蔬菜</option>
+                  <option class="ft2" onclick="showtype()" value="jianguo">坚果类</option>
+                  <option class="ft2" onclick="showtype()" value="milk">乳制品</option>
+                  <option class="ft2" onclick="showtype()" value="other">其他</option>
+                </select>
+                </form>
+                <span  id="showyys"><input type="checkbox" onclick="yysshow()">所含矿物质显示</span>
+                <select  id="chapterselector">
+                  <option onclick="showchapter()">显示食物界面</option>
+                  <option onclick="showchapter()">显示元素界面</option>
+                </select>
+            </div>
+            <div id="food-content-page2">
+              <div id="food-type-content2">
+                <div class="ww2" value="meat">
+                    <p style="font-size: 26px;color: blueviolet;">请选择您的食谱，我们会为您计算您食谱中所缺的大量元素与微量元素：</p>
+                  <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle2">肉类:</span>
+                  <ul class="foodtype2"  value="meat">
+                    <li><input type="checkbox" class="specifood" value="钙磷锌铁铬">牛肉<span class="yingyangsu">(钙磷锌铁铬)</span></li>
+                    <li><input type="checkbox" class="specifood" value="磷锌硒铬">鸡肉<span class="yingyangsu">(磷锌硒铬)</span></li>
+                    <li><input type="checkbox" class="specifood" value="磷锌铁铬">瘦猪肉<span class="yingyangsu">(磷锌铁铬)</span></li>
+                    <li><input type="checkbox" class="specifood" value="铁锌">鸡肝<span class="yingyangsu">(铁锌)</span></li>
+                    <li><input type="checkbox" class="specifood" value="锌硒碘">贝类<span class="yingyangsu">(锌硒碘)</span></li>
+                    <li><input type="checkbox" class="specifood" value="锌碘硒">鱼类<span class="yingyangsu">(锌碘硒)</span></li>
+                    <li><input type="checkbox" class="specifood" value="锌碘硒">虾类<span class="yingyangsu">(锌碘硒)</span></li>
+                  </ul>
+                </div>
+        
+                <div class="ww2" value="fruit">
+                  <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle2">水果:</span>
+                  <ul class="foodtype2"  value="fruit">
+                    <li><input type="checkbox" class="specifood" value="钾">香蕉<span class="yingyangsu">(钾)</span></li>
+                    <li><input type="checkbox" class="specifood" value="钾镁">鳄梨<span class="yingyangsu">(钾镁)</span></li>
+                    <li><input type="checkbox" class="specifood" value="铬">苹果<span class="yingyangsu">(铬)</span></li>
+                    <li><input type="checkbox" class="specifood" value="钾镁">橙子<span class="yingyangsu">(钾镁)</span></li>
+                    <li><input type="checkbox" class="specifood" value="钾镁">柠檬<span class="yingyangsu">(钾镁)</span></li>
+                    
+                  </ul>
+                </div> 
+      
+                <div class="ww2" value="veg">
+                  <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle2">蔬菜:</span>
+                  <ul class="foodtype2"  value="veg">
+                    <li><input type="checkbox" class="specifood" value="钙镁铁锰">菠菜<span class="yingyangsu">(钙镁铁锰)</span></li>
+                    <li><input type="checkbox" class="specifood" value="钾">红薯<span class="yingyangsu">(钾)</span></li>
+                    <li><input type="checkbox" class="specifood" value="铬">西兰花<span class="yingyangsu">(铬)</span></li>
+                    <li><input type="checkbox" class="specifood" value="磷钾铁锌镁">豆类（如黑豆、扁豆）<span class="yingyangsu">(磷钾铁锌镁)</span></li>
+                    <li><input type="checkbox" class="specifood" value="碘">海带<span class="yingyangsu">(碘)</span></li>
+                    <li><input type="checkbox" class="specifood" value="碘">紫菜<span class="yingyangsu">(碘)</span></li>
+      
+                  </ul>
+                </div> 
+      
+                <div class="ww2" value="jianguo">
+                  <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle2">坚果类:</span>
+                  <ul class="foodtype2"  value="jianguo">
+                    <li><input type="checkbox" class="specifood" value="镁锌">南瓜子<span class="yingyangsu">(镁锌)</span></li>
+                    <li><input type="checkbox" class="specifood" value="镁锰锌">腰果<span class="yingyangsu">(镁锰锌)</span></li>
+                    <li><input type="checkbox" class="specifood" value="锰">榛子<span class="yingyangsu">(锰)</span></li>
+                    <li><input type="checkbox" class="specifood" value="锌镁铁">杏仁<span class="yingyangsu">(锌镁铁)</span></li>
+                    <li><input type="checkbox" class="specifood" value="锌镁铁">核桃<span class="yingyangsu">(锌镁铁)</span></li>
+                    <li><input type="checkbox" class="specifood" value="锌镁铁">花生<span class="yingyangsu">(锌镁铁)</span></li>
+                    
+                  </ul>
+                </div> 
+      
+                <div class="ww2" value="milk">
+                  <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle2">乳制品:</span>
+                  <ul class="foodtype2"  value="milk">
+                    <li><input type="checkbox" class="specifood" value="钙碘锌">牛奶<span class="yingyangsu">(钙碘锌)</span></li>
+                    <li><input type="checkbox" class="specifood" value="钙锌">酸奶<span class="yingyangsu">(钙锌)</span></li>
+                    <li><input type="checkbox" class="specifood" value="钙锌">奶酪<span class="yingyangsu">(钙锌)</span></li>
+                  </ul>
+                </div> 
+      
+                <div class="ww2" value="other">
+                  <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle2">其他:</span>
+                  <ul class="foodtype2"  value="other"> 
+                    <li><input type="checkbox" class="specifood" value="镁">黑巧克力<span class="yingyangsu">(镁)</span></li>
+                    <li><input type="checkbox" class="specifood" value="镁锌硒">全麦面包<span class="yingyangsu">(镁锌硒)</span></li>
+                    <li><input type="checkbox" class="specifood" value="锰">燕麦<span class="yingyangsu">(锰)</span></li>
+                    <li><input type="checkbox" class="specifood" value="铁">果干<span class="yingyangsu">(铁)</span></li>
+                  </ul>
+                </div> 
+              
+      
+             </div>       
+           
+            
+         <div class="yingyang-bottom">
+         
+          <input type="button" onclick="elementlack()" value="提交"><br>
+          <p style="font-size: 24px;text-indent: 300px;color: rgb(167, 106, 224);transform: translate(0px, 35px);">您的食谱里缺少的元素为：<input type="text" id="yysresult" disabled></p>
+         </div>  
+          </div> 
+          </div>
+      
+          <div id="yyschapter">
+            <p style="text-align: center;">您可以选择您想查看的元素，我们会为您推荐补充这种元素最佳的五种食物</p>
+
+            <div class="yybottom2">
+            <div id="yysselector"  >
+              <select id="yysselect">
+            <option class="yuansu"onclick="eleselect()" value="牛奶 酸奶 奶酪 菠菜 豆腐 杏仁" >钙</option
+              ><br>
+            <option class="yuansu" onclick="eleselect()" value="坚果 全谷物 豆类 绿叶蔬菜 黑巧克力 鳄梨">镁</option
+              ><br>
+            <option class="yuansu" onclick="eleselect()" value="鱼类 肉类 鸡蛋 奶制品 坚果 豆类">磷</option
+              ><br>
+            <option class="yuansu" onclick="eleselect()" value="香蕉 土豆 菠菜 豆类 橙子 西瓜">钾</option
+              ><br>
+            <option class="yuansu" onclick="eleselect()" value="红肉 瘦肉 鸡肉 鱼类 豆类 菠菜">铁</option
+              ><br>
+            <option class="yuansu" onclick="eleselect()" value="肉类 海鲜 坚果 奶制品 豆类 全谷物">锌</option
+              ><br>
+            <option class="yuansu" onclick="eleselect()" value="海藻 鱼类 奶制品 碘盐 鸡蛋 玉米">碘</option
+              ><br>
+            <option class="yuansu" onclick="eleselect()" value="全谷物 坚果 茶叶 菠菜 菠萝 红米">锰</option
+              ><br>
+            <option class="yuansu" onclick="eleselect()" value="巴西坚果 海鲜 肉类 谷物 鸡蛋 大蒜">硒</option
+              ><br>
+            <option class="yuansu" onclick="eleselect()" value="全谷物 西兰花 肉类 蘑菇 土豆 葡萄汁">铬</option
+              >
+              </select>
+              <input type="text"style="width:800px;">
+            </div>
+          </div>
+    </div>
+</div>
+<!-- 营养元素计算器结束 -->
+
+<!-- 遗传计算器开始 -->
+<div id="yichuan" class="content">
+        <div class="yichuancontent">
+              <div class="di_shuoming">
+                <span style="font-size:26px"><b>欢迎使用遗传计算器!</b></span><br><br>
+                <span style="font-size:20px"><b>该计算器仅用于疾病遗传性的科普。<br>使用方法：请您依次选择疾病的遗传类型、亲代的病状显现及子女的性别。选择完毕后按确定按钮，计算器会显示子女患有该病的概率。</b></span>
+              </div>
+              <div class="type_choose">
+                <div class="di_tips">疾病遗传类型：</div>
+                <div >
+                <input type="radio" name="di_type" value="0">x染色体隐性遗传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="di_type" value="1">x染色体显性遗传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="di_type" value="2">y染色体遗传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="di_type" value="3">常染色体隐性遗传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="di_type" value="4">常染色体显性遗传
+                </div>
+               </div> 
+                <div class="parents">
+                    <div id="father">
+                        <p><span style="color: rgb(67, 103, 135);">父亲：</span>
+                        <input type="radio" name="father_" value="1">显现症状
+                        <input type="radio" name="father_" value="0">不显现症状</p>
+                    </div>
+                    <div id="mother">
+                        <p><span style="color: rgb(67, 103, 135);">母亲：</span>
+                        <input type="radio" name="mother_" value="1">显现症状
+                        <input type="radio" name="mother_" value="0">不显现症状</p>
+                    </div>
+                    <div id="children">
+                        <p>子女性别：
+                            <input type="radio" name="gender" value="0">女
+                    <input type="radio" name="gender" value="1">男
+                    
+                        </p>
+                    </div>
+                    <button onclick="di_sendresult()" id="di_submit"><b>确定</b></button>
+                </div>
+                <div class="di_result">
+                    <div class="gender_choice">
+                    <p >子女患病概率:<input type="text" style="color: black;"id="genderchoice-input" disabled name="dis_result"></p>
+                    </div>
+                </div>
+             
+            
+        </div>   
+</div>
+<!-- 遗传计算器结束 -->
+
+<!-- 心理健康计算器 -->
+<div id="heart" class="content">
+    <div class="heartcontent"id="heart-content">
+        <div class="heart_shuoming">
+            <p style="text-align: center;"><span style="font-size:30px;"><b>欢迎使用心理健康计算器!</b></span><br><br></p>
+            <span style="font-size:20px">&nbsp;&nbsp;&nbsp;&nbsp;我们为您提供了一个心理健康测试，您可以点击按钮开始答题，答题结束后我们会为您提供一份心理健康报告供您参考。</span>
+        </div>
+        <div class="heart-main">
+            <img src="./images/heart-main.jpeg" alt="这是一个图片">
+            <button onclick="shiftquestion()"id="heart-start"><b>开始作答</b></button>
+        </div>
+    </div>   
+    <div class="text-content"id="textcontent1">
+        <p>1.我经常感到焦虑或紧张<span class="heart-options"><input type="radio" name="q1" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="2.5"> 非常同意</span></p>
+        <p>2.我对日常活动感到疲惫或无精打采。<span class="heart-options"><input type="radio" name="q2" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q2" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q2" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q2" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q2" value="2.5"> 非常同意</span></p>
+        <p>3.我很容易感到沮丧或悲伤。<span class="heart-options"><input type="radio" name="q3" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q3" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q3" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q3" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q3" value="2.5"> 非常同意</span></p>
+        <p>4.我能轻松与他人沟通。<span class="heart-options"><input type="radio" name="q4" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q4" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q4" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q4" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q4" value="2.5"> 非常同意</span></p>
+        <p>5.我感到有许多事情让我感到不安。<span class="heart-options"><input type="radio" name="q5" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q5" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q5" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q5" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q5" value="2.5"> 非常同意</span></p>
+        <p>6.我能适当地处理压力。<span class="heart-options"><input type="radio" name="q6" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q6" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q6" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q6" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q6" value="2.5"> 非常同意</span></p>
+        <p>7.我觉得自己在社交场合中很自在。<span class="heart-options"><input type="radio" name="q7" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q7" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q7" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q7" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q7" value="2.5"> 非常同意</span></p>
+        <p>8.我对未来感到乐观。<span class="heart-options"><input type="radio" name="q8" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q8" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q8" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q8" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q8" value="2.5"> 非常同意</span></p>
+        <p>9.我能很好地管理自己的情绪。<span class="heart-options"><input type="radio" name="q9" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q9" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q9" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q9" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q9" value="2.5"> 非常同意</span></p>
+        <p>10.我经常感到孤独。<span class="heart-options"><input type="radio" name="q10" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q10" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q10" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q10" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q10" value="2.5"> 非常同意</span></p>
+        <button onclick="Nextpage(0)"class="lastpage" style="right:50%;"><b>下一页</b></button><!-- class全写反了，就这样吧，懒得改了 -->
+    </div>
+    <div class="text-content"id="textcontent2">
+        <p>11.我认为我的生活有意义。<span class="heart-options"><input type="radio" name="q11" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q11" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q11" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q11" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q11" value="2.5"> 非常同意</span></p>
+        <p>12.我经常做恶梦。<span class="heart-options"><input type="radio" name="q12" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q12" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q12" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q12" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q12" value="2.5"> 非常同意</span></p>
+        <p>13.我能轻松应对突发情况。<span class="heart-options"><input type="radio" name="q13" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q13" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q13" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q13" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q13" value="2.5"> 非常同意</span></p>
+        <p>14.我在工作或学习中感到压力很大。<span class="heart-options"><input type="radio" name="q14" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q14" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q14" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q14" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q14" value="2.5"> 非常同意</span></p>
+        <p>15.我觉得自己能在困境中保持冷静。<span class="heart-options"><input type="radio" name="q15" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q15" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q15" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q15" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q15" value="2.5"> 非常同意</span></p>
+        <p>16.我常常觉得别人对我有误解。<span class="heart-options"><input type="radio" name="q16" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q16" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q16" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q16" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q16" value="2.5"> 非常同意</span></p>
+        <p>17.我有充足的支持系统（朋友、家人等）。<span class="heart-options"><input type="radio" name="q17" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q17" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q17" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q17" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q17" value="2.5">非常同意</span></p>
+        <p>18.我对自己的外貌感到自信。<span class="heart-options"><input type="radio" name="q18" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q18" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q18" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q18" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q18" value="2.5"> 非常同意</span></p>
+        <p>19.我能从失败中吸取教训。<span class="heart-options"><input type="radio" name="q19" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q19" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q19" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q19" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q19" value="2.5"> 非常同意</span></p>
+        <p>20.我经常感到愤怒或易怒。<span class="heart-options"><input type="radio" name="q20" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q20" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q20" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q20" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q20" value="2.5"> 非常同意</span></p>
+        <button onclick="Nextpage(1)"class="lastpage"><b>下一页</b></button>
+        <button onclick="Lastpage(1)"class="nextpage"><b>上一页</b></button>
+    </div>
+    
+    <div class="text-content"id="textcontent3">
+        <p>21.我能很好地保持个人生活与工作的平衡。<span class="heart-options"><input type="radio" name="q21" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q21" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q21" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q21" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q21" value="2.5"> 非常同意</span></p>
+        <p>22.我在面对困难时感到无助。<span class="heart-options"><input type="radio" name="q22" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q22" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q22" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q22" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q22" value="2.5"> 非常同意</span></p>
+        <p>23.我能有效地解决问题。<span class="heart-options"><input type="radio" name="q23" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q23" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q23" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q23" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q23" value="2.5"> 非常同意</span></p>
+        <p>24.我觉得生活中有很多事情让我开心。<span class="heart-options"><input type="radio" name="q24" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q24" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q24" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q24" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q24" value="2.5"> 非常同意</span></p>
+        <p>25.我会频繁回忆过去的事情，难以放下。<span class="heart-options"><input type="radio" name="q25" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q25" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q25" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q25" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q25" value="2.5"> 非常同意</span></p>
+        <p>26.我感到自己的情绪不稳定。<span class="heart-options"><input type="radio" name="q26" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q26" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q26" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q26" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q26" value="2.5"> 非常同意</span></p>
+        <p>27.我能够接受自己的缺点。<span class="heart-options"><input type="radio" name="q27" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q27" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q27" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q27" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q27" value="2.5"> 非常同意</span></p>
+        <p>28.我在公共场合发言时感到紧张。<span class="heart-options"><input type="radio" name="q28" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q28" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q28" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q28" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q28" value="2.5"> 非常同意</span></p>
+        <p>29.我觉得自己有足够的时间来完成日常任务。<span class="heart-options"><input type="radio" name="q29" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q29" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q29" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q29" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q29" value="2.5"> 非常同意</span></p>
+        <p>30.我能妥善处理人际关系中的冲突。<span class="heart-options"><input type="radio" name="q30" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q30" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q30" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q30" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q30" value="2.5"> 非常同意</span></p>
+        <button onclick="Nextpage(2)"class="lastpage"><b>下一页</b></button>
+        <button onclick="Lastpage(2)"class="nextpage"><b>上一页</b></button>
+    </div>
+    <div class="text-content"id="textcontent4">
+        <p>31.我经常感到压力山大。<span class="heart-options"><input type="radio" name="q31" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q31" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q31" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q31" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q31" value="2.5"> 非常同意</span></p>
+        <p>32.我能在压力下保持专注。<span class="heart-options"><input type="radio" name="q32" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q32" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q32" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q32" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q32" value="2.5"> 非常同意</span></p>
+        <p>33.我愿意尝试新的事物。<span class="heart-options"><input type="radio" name="q33" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q33" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q33" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q33" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q33" value="2.5"> 非常同意</span></p>
+        <p>34.我常常感到无聊。<span class="heart-options"><input type="radio" name="q34" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q34" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q34" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q34" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q34" value="2.5"> 非常同意</span></p>
+        <p>35.我认为我能对他人的情绪给予理解。<span class="heart-options"><input type="radio" name="q35" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q35" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q35" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q35" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q35" value="2.5"> 非常同意</span></p>
+        <p>36.我很难放松自己。<span class="heart-options"><input type="radio" name="q36" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q36" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q36" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q36" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q36" value="2.5"> 非常同意</span></p>
+        <p>37.我觉得自己在生活中缺乏方向感。<span class="heart-options"><input type="radio" name="q37" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q37" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q37" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q37" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q37" value="2.5"> 非常同意</span></p>
+        <p>38.我能够有效地管理我的时间。<span class="heart-options"><input type="radio" name="q38" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q38" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q38" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q38" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q38" value="2.5"> 非常同意</span></p>
+        <p>39.我对自己有清晰的目标。<span class="heart-options"><input type="radio" name="q39" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q39" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q39" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q39" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q39" value="2.5"> 非常同意</span></p>
+        <p>40.我感到周围的人都很支持我。<span class="heart-options"><input type="radio" name="q40" value="0.5"> 非常不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q40" value="1"> 不同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q40" value="1.5"> 中立&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q40" value="2"> 同意&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q40" value="2.5"> 非常同意</span></p>
+        <button onclick=" calculateSum()"class="lastpage"><b>提交</b></button>
+        <button onclick="Lastpage(3)"class="nextpage"><b>上一页</b></button><!-- class全写反了，就这样吧，懒得改了 -->
+    </div>
+    <div id="heart-result-contant" class="heartresult-content">
+        <div class="heartresult_shuoming">
+            <p style="text-align: center;"><span style="font-size:26px;"><b>您的分数为：</b></span><input type="text"disabled id="heart-gradeinput"></p><br><br>
+            <p style="text-align: center;"><span style="font-size:26px;"><b>您的测试结果为：</b></span><input type="text"disabled id="heart-resultinput"></p>
+            <div class="heart-advice"id="h-advice1">
+                  <p>您可能面临较为严重的心理健康问题，如焦虑、抑郁或情绪失调等。此时，日常生活的压力和挑战可能会让您感到无能为力，情绪波动较大，甚至影响到您的社交和工作状态。建议您不要孤军奋战，寻求专业的心理医生进行评估和治疗，以便更好地理解和处理自己的情绪。</p><br>
+                  <p>请您务必重视自己的心理健康，及早寻求帮助。专业人士可以为您提供有效的支持和治疗方案，帮助您逐步改善心理状态。记住，心理健康是生活质量的重要组成部分，勇敢迈出第一步寻求帮助，是通向康复的关键。您并不孤单，还有许多人关心着您，愿意支持您走出阴霾。</p>
+            </div>
+            <div class="heart-advice"id="h-advice2">
+                <p>您可能存在一些心理健康问题，诸如轻度的焦虑、抑郁或情绪波动。虽然这些问题可能不会对您的日常生活造成严重影响，但它们仍然值得关注。您可能会时常感到压力，或者对某些事情感到无助。认知并接受这些感受是改善心理健康的重要第一步。</p><br>
+                <p>请您开始关注自己的心理状态，尝试记录情绪变化，并分析可能的触发因素。可以寻求心理咨询，或参加一些心理健康活动，增强自己的应对能力。同时，保持良好的生活习惯，如均衡饮食、适量运动和充足的睡眠，也能帮助您提升心理健康。请相信，通过积极的努力，您可以逐渐改善自己的心理状态，迎接更加积极的生活。</p>
+            </div>
+            <div class="heart-advice"id="h-advice3">
+                <p>您的心理健康状况相对良好。尽管偶尔会感受到压力和负面情绪，但您能够较好地管理这些情绪，并保持较为积极的心态。您可能有一定的应对策略，能够有效应对生活中的挑战和困难，通常也能保持良好的社交关系和工作表现。</p><br>
+                <p>尽管您的心理健康状态较好，但仍需定期进行自我评估和反思，保持警觉，以防止潜在的压力累积。可以尝试一些放松技巧，如冥想、瑜伽或其他爱好，进一步提升自己的心理韧性。此外，积极维护与他人的联系，分享自己的感受和经验，可以增强您的支持网络。继续保持这种良好的状态，您会发现生活中的每一个挑战都是成长的机会。
+
+                </p>
+            </div>
+            <div class="heart-advice"id="h-advice4">
+                <p>您的心理健康状况非常优秀，表明您能够有效地应对生活中的挑战，保持积极的情绪和良好的心理状态。您可能拥有良好的应对策略和健康的社交关系，能在压力情况下找到有效的解决方法。这样的心理状态有助于您在工作和生活中取得更好的成就，同时也能享受生活中的美好时光。</p><br>
+                <p>保持这种积极的心理状态非常重要，建议您继续培养和维护良好的生活习惯，保持身心的平衡。同时，您可以利用自己的积极体验去帮助他人，分享您的经历和应对策略，成为他人的榜样。通过参与志愿活动或心理健康相关的活动，不仅能帮助他人，也会让您自身感受到更多的满足与快乐。继续前行，您正走在一条充满可能性和希望的道路上！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 心理健康计算器结束 -->
+
+
+<!-- 食物热量排序器开始 -->
+<div id="foodsort" class="content">
+    <div class="foodsortcontent">
+        <div>
+            <div id="select-top">
+              <form class="seletor" id="food-type-seletor">
+                食物种类:
+                <select id="foodselector">
+                  <option class="ft" onclick="showtype()" value="all">全部</option>
+                  <option class="ft" onclick="showtype()" value="meat">肉类</option>
+                  <option class="ft" onclick="showtype()" value="fruit">水果</option>
+                  <option class="ft" onclick="showtype()" value="veg">蔬菜</option>
+                  <option class="ft" onclick="showtype()" value="zhushi">主食</option>
+                  <option class="ft" onclick="showtype()" value="milk">奶类</option>
+                  <option class="ft" onclick="showtype()" value="sugar">糖类</option>
+                  <option class="ft" onclick="showtype()" value="other">其他</option>
+                </select>
+              </form>
+              <form class="seletor" id="order">
+                热量排序:
+                <select id="paixu">
+                  <option value="high" onclick="high()">按热量从高到低排序</option>
+                  <option value="low" onclick="low()">按热量从低到高排序</option>
+                </select>
+              </form>
+              <span id="heat">显示热量<input type="checkbox" id="heat-show" onclick="heatshow()"></span>
+            </div>
+          <div id="food-content-page">
+              <div id="food-type-content">
+                  <div class="ww" value="meat">
+                      <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle">肉类:</span>
+                      <ul class="foodtype" id="meatfood" value="meat">
+                          <li value="315" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="猪大排">猪大排
+                              <span class="foodheat">热量: 315</span>
+                          </li>
+                          <li value="400" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="炸鸡">炸鸡
+                              <span class="foodheat">热量: 400</span>
+                          </li>
+                          <li value="250" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="牛排">牛排
+                              <span class="foodheat">热量: 250</span>
+                          </li>
+                          <li value="294" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="羊肉串">羊肉串
+                              <span class="foodheat">热量: 294</span>
+                          </li>
+                          <li value="157" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="鸡胗">鸡胗
+                              <span class="foodheat">热量: 157</span>
+                          </li>
+                          <li value="269" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="火腿肠">火腿肠
+                              <span class="foodheat">热量: 269</span>
+                          </li>
+                          <li value="280" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="午餐肉">午餐肉
+                              <span class="foodheat">热量: 280</span>
+                          </li>
+                          <li value="246" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="鸡翅">鸡翅
+                              <span class="foodheat">热量: 246</span>
+                          </li>
+                          <li value="73" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="猪血">猪血
+                              <span class="foodheat">热量: 73</span>
+                          </li>
+                          <li value="52" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="鸭血">鸭血
+                              <span class="foodheat">热量: 52</span>
+                          </li>
+                          <li value="94" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="牛肚">牛肚
+                              <span class="foodheat">热量: 94</span>
+                          </li>
+                          <li value="212" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="叉烧">叉烧
+                              <span class="foodheat">热量: 212</span>
+                          </li>
+                          <li value="222" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="鸡爪">鸡爪
+                              <span class="foodheat">热量: 222</span>
+                          </li>
+                          <li value="120" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="鸭舌">鸭舌
+                              <span class="foodheat">热量: 120</span>
+                          </li>
+          
+                      </ul>
+                  </div>
+                  <div class="ww" value="fruit">
+                      <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle">水果:</span>
+                      <ul class="foodtype" id="fruitfood" value="meat">
+                          <li value="52" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="苹果">苹果
+                              <span class="foodheat">热量: 52</span>
+                          </li>
+                          <li value="89" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="香蕉">香蕉
+                              <span class="foodheat">热量: 89</span>
+                          </li>
+                          <li value="57" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="梨">梨
+                              <span class="foodheat">热量: 57</span>
+                          </li>
+                          <li value="30" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="西瓜">西瓜
+                              <span class="foodheat">热量: 30</span>
+                          </li>
+                          <li value="61" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="猕猴桃">猕猴桃
+                              <span class="foodheat">热量: 61</span>
+                          </li>
+                          <li value="47" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="橙子">橙子
+                              <span class="foodheat">热量: 47</span>
+                          </li>
+                          <li value="50" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="菠萝">菠萝
+                              <span class="foodheat">热量: 50</span>
+                          </li>
+                          <li value="39" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="桃子">桃子
+                              <span class="foodheat">热量: 39</span>
+                          </li>
+                          <li value="47" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="橘子">橘子
+                              <span class="foodheat">热量: 47</span>
+                          </li>
+                          <li value="38" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="枇杷">枇杷
+                              <span class="foodheat">热量: 38</span>
+                          </li>
+                          <li value="60" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="芒果">芒果
+                              <span class="foodheat">热量: 60</span>
+                          </li>
+                          <li value="32" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="草莓">草莓
+                              <span class="foodheat">热量: 32</span>
+                          </li>
+                          <li value="147" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="榴莲">榴莲
+                              <span class="foodheat">热量: 147</span>
+                          </li>
+                          <li value="57" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="杨梅">杨梅
+                              <span class="foodheat">热量: 57</span>
+                          </li>
+                          <li value="354" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="椰子">椰子
+                              <span class="foodheat">热量: 354</span>
+                          </li>
+                          <li value="69" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="葡萄">葡萄
+                              <span class="foodheat">热量: 69</span>
+                          </li>
+                          <li value="63" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="樱桃">樱桃
+                              <span class="foodheat">热量: 63</span>
+                          </li>
+                          <li value="60" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="甘蔗">甘蔗
+                              <span class="foodheat">热量: 60</span>
+                          </li>
+          
+                      </ul>
+                  </div>
+          
+                  <div class="ww" value="veg">
+                      <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle">蔬菜:</span>
+                      <ul class="foodtype" id="fruitfood" value="veg">
+                          <li value="77" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="土豆">土豆
+                              <span class="foodheat">热量: 77</span>
+                          </li>
+                          <li value="118" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="山药">山药
+                              <span class="foodheat">热量: 118</span>
+                          </li>
+                          <li value="30" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="豆芽菜">豆芽菜
+                              <span class="foodheat">热量: 30</span>
+                          </li>
+                          <li value="41" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="胡萝卜">胡萝卜
+                              <span class="foodheat">热量: 41</span>
+                          </li>
+                          <li value="40" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="洋葱">洋葱
+                              <span class="foodheat">热量: 40</span>
+                          </li>
+                          <li value="34" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="西兰花">西兰花
+                              <span class="foodheat">热量: 34</span>
+                          </li>
+                          <li value="40" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="辣椒">辣椒
+                              <span class="foodheat">热量: 40</span>
+                          </li>
+                          <li value="23" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="香菜">香菜
+                              <span class="foodheat">热量: 23</span>
+                          </li>
+                          <li value="16" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="芹菜">芹菜
+                              <span class="foodheat">热量: 16</span>
+                          </li>
+                          <li value="32" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="大葱">大葱
+                              <span class="foodheat">热量: 32</span>
+                          </li>
+                          <li value="36" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="韭菜">韭菜
+                              <span class="foodheat">热量: 36</span>
+                          </li>
+                          <li value="23" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="菠菜">菠菜
+                              <span class="foodheat">热量: 23</span>
+                          </li>
+                          <li value="25" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="花菜">花菜
+                              <span class="foodheat">热量: 25</span>
+                          </li>
+                          <li value="26" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="南瓜">南瓜
+                              <span class="foodheat">热量: 26</span>
+                          </li>
+                          <li value="20" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="丝瓜">丝瓜
+                              <span class="foodheat">热量: 20</span>
+                          </li>
+                          <li value="18" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="西红柿">西红柿
+                              <span class="foodheat">热量: 18</span>
+                          </li>
+                          <li value="33" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="木耳">木耳
+                              <span class="foodheat">热量: 33</span>
+                          </li>
+                          <li value="16" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="黄瓜">黄瓜
+                              <span class="foodheat">热量: 16</span>
+                          </li>
+                          <li value="13" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="冬瓜">冬瓜
+                              <span class="foodheat">热量: 13</span>
+                          </li>
+                          <li value="14" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="生菜">生菜
+                              <span class="foodheat">热量: 14</span>
+                          </li>
+          
+                      </ul>
+                  </div>
+          
+                  <div class="ww" value="zhushi">
+                      <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle">主食:</span>
+                      <ul class="foodtype" id="fruitfood" value="zhushi">
+                          <li value="119" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="小米">小米
+                              <span class="foodheat">热量: 119</span>
+                          </li>
+                          <li value="113" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="粉丝">粉丝
+                              <span class="foodheat">热量: 113</span>
+                          </li>
+                          <li value="138" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="面条">面条
+                              <span class="foodheat">热量: 138</span>
+                          </li>
+                          <li value="448" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="方便面">方便面
+                              <span class="foodheat">热量: 448</span>
+                          </li>
+                          <li value="131" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="通心粉">通心粉
+                              <span class="foodheat">热量: 131</span>
+                          </li>
+                          <li value="389" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="燕麦片">燕麦片
+                              <span class="foodheat">热量: 389</span>
+                          </li>
+                          <li value="330" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="土豆粉">土豆粉
+                              <span class="foodheat">热量: 330</span>
+                          </li>
+                          <li value="86" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="红薯">红薯
+                              <span class="foodheat">热量: 86</span>
+                          </li>
+                          <li value="96" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="玉米">玉米
+                              <span class="foodheat">热量: 96</span>
+                          </li>
+          
+                      </ul>
+                  </div>
+          
+                  <div class="ww" value="milk">
+                      <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle">奶类:</span>
+                      <ul class="foodtype" id="fruitfood" value="milk">
+                          <li value="42" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="牛奶">牛奶
+                              <span class="foodheat">热量: 42</span>
+                          </li>
+                          <li value="717" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="黄油">黄油
+                              <span class="foodheat">热量: 717</span>
+                          </li>
+                          <li value="402" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="奶酪">奶酪
+                              <span class="foodheat">热量: 402</span>
+                          </li>
+                          <li value="59" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="酸奶">酸奶
+                              <span class="foodheat">热量: 59</span>
+                          </li>
+          
+                      </ul>
+                  </div>
+          
+                  <div class="ww" value="sugar">
+                      <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle">糖类:</span>
+                      <ul class="foodtype" id="fruitfood" value="sugar">
+                          <li value="546" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="巧克力">巧克力
+                              <span class="foodheat">热量: 546</span>
+                          </li>
+                          <li value="377" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="红糖">红糖
+                              <span class="foodheat">热量: 377</span>
+                          </li>
+                          <li value="304" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="蜂蜜">蜂蜜
+                              <span class="foodheat">热量: 304</span>
+                          </li>
+                          <li value="349" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="淀粉">淀粉
+                              <span class="foodheat">热量: 349</span>
+                          </li>
+                          <li value="387" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="冰糖">冰糖
+                              <span class="foodheat">热量: 387</span>
+                          </li>
+                      </ul>
+                  </div>
+          
+                  <div class="ww" value="other">
+                      <span style="font-size:20px;color: red;font-weight: bold;" class="foodtitle">其他:</span>
+                      <ul class="foodtype" id="fruitfood" value="other">
+                          <li value="52" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="鸡蛋白">鸡蛋白
+                              <span class="foodheat">热量: 52</span>
+                          </li>
+                          <li value="322" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="鸡蛋黄">鸡蛋黄
+                              <span class="foodheat">热量: 322</span>
+                          </li>
+                          <li value="265" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="面包">面包
+                              <span class="foodheat">热量: 265</span>
+                          </li>
+                          <li value="360" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="蛋糕">蛋糕
+                              <span class="foodheat">热量: 360</span>
+                          </li>
+                          <li value="240" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="汤包">汤包
+                              <span class="foodheat">热量: 240</span>
+                          </li>
+                          <li value="262" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="油条">油条
+                              <span class="foodheat">热量: 262</span>
+                          </li>
+                          <li value="91" class="specific-food">
+                              <input type="checkbox" class="food-checkbox" value="凉粉">凉粉
+                              <span class="foodheat">热量: 91</span>
+                          </li>
+          
+                      </ul>
+                  </div>
+          
+          
+              </div>
+          </div>
+          <div>
+              <input type="text" id="sort-display" disabled><br>
+              <button onclick="shaixuanhigh()" class="highlow">从高到低排序</button>
+              <button onclick="shaixuanlow()"class="highlow">从低到高排序</button>
+          
+          
+          </div>
+          </div>
+
+    </div>
+</div>
+<!-- 食物热量排序器结束 -->
+
+<div id="healthylife" class="content">
+    <div class="healthylifecontent">
+    <div class="healthy-life-word">
+        <p style="text-align: center;font-size: 26px;color: green;"><b>欢迎来到健康生活计算器！让我们一起来计算健康的生活作息能带给我们的好处吧</b></p>
+    </div>
+    <div class="healthylife-main">
+        <select id="hlaselector">
+            <option class="hla" onclick="showtype1(1)" value="all">足够的睡眠时间</option>
+            <option class="hla" onclick="showtype1(2)" value="meat">适度的锻炼</option>
+            <option class="hla" onclick="showtype1(3)" value="fruit">合理的饮食时间</option>
+            <option class="hla" onclick="showtype1(4)" value="veg">蔬菜</option>
+            <option class="hla" onclick="showtype1(5)" value="zhushi">主食</option>
+            <option class="hla" onclick="showtype1(6)" value="milk">奶类</option>
+            <option class="hla" onclick="showtype1(7)" value="fruit">水果</option>
+
+          </select>
+
+        <div class="hlequal">
+            <p style="font-size: 40px;color: black;">=</p>
+        </div>
+          <textarea  id="hleresult" cols="20" rows="8"></textarea>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- 引入JS -->
+    <script src="./JS/index.js"></script>
+</body>
+</html>

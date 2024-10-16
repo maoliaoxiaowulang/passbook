@@ -1,0 +1,1019 @@
+body{
+    background-color: #c3d5c4;
+}
+/* 顶部开始 */
+.header{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #333;
+    font-size: 13px;
+    color: #d7d4d4;
+}
+.wrap{
+    
+    width: 1150px;
+    margin: 0 auto;
+}
+.header a{
+    color: #d7d4d4;
+}
+
+.header-title{
+    float: left;
+    transform:translate(20px);
+}
+.header-logon{
+    float: right;
+    transform:translate(-100px);/*向左移动 */
+}
+.header-sentence{
+    float:none;
+}
+
+.header-wrap{
+    width: 200px;
+    margin: 0 auto;
+    
+}
+
+.header li{
+   float: left;
+}
+
+.header .header-logon li span{
+    color: #424242;
+    margin: 0 3.6px;
+}
+/* 顶部结束 */
+
+
+
+
+/* 左侧导航开始 */
+.left-nav{
+    position: absolute;
+    width: 234px;
+    height: 100%;
+    background-color: #393838;
+}
+.right-nav{
+    position: absolute;
+    width: 234px;
+    height: 100%;
+    background-color: #393838;
+}
+.left-nav-slide>ul>li{
+    height: 42px;
+    line-height: 42px;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 30px;
+    font-size: 16px;
+}
+.left-nav-slide>ul>li>a{
+    color:#ffffffa9 ;
+}
+.left-nav-slide i{
+    float: right;
+    padding-right: 20px;
+}
+.left-nav-slide>ul>li:hover{
+    background-color: #f06102;
+}
+/* 左侧导航结束 */
+
+/* 上部导航开始 */
+.top-picture{
+    width: 1280px;
+    margin: 0 auto;
+    transform: translate(0px, -23px);
+    position: relative;
+}
+
+/* 上部导航结束 */
+.right-nav {
+    position: absolute; /* 绝对定位 */
+    right: 0; /* 靠右对齐 */
+    
+    width: 234px; /* 设置 DIV 的宽度 */
+    height: 100%; /* 设置 DIV 的高度 */
+    background-color: #4CAF50; /* 设置背景颜色 */
+    color: white;
+    text-align: center;
+    line-height: 200px; /* 使文本垂直居中 */
+    background-color: #393838;
+}
+
+
+.top-word{
+    width: 1150px;
+    height: 180px;
+    margin: 0 auto;
+    transform: translate(0px, -40px);
+    position: relative;
+    /* background-color: #f06102; */
+    font-size: 22px;
+    text-align: center;
+    line-height: 40px;
+    color: #064408;
+}
+.main{overflow: hidden;
+    width: 1150px;
+    height: 400px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;}
+
+
+
+    /* 轮播图开始 */
+.wrap{
+    width: 500px;
+    margin: 0 auto;
+}
+.banner{
+    width: 00px;
+    height: 350px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+    transform: translate(50px, 40px);
+    float: left; /* 左浮动 */
+    display: flex;
+}
+.banner-box{
+    height: 350px;
+    
+}
+.banner-slide{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;  /* 居中 */
+   
+  
+}
+.slide{position: relative;
+       width: 500px;
+       height: 300px;
+       /* background-color: aqua; */
+
+}
+.slide img{
+    
+    width:500px;
+    height: 300px;
+          }
+.slide a{
+     color:#dcd9d9;
+     vertical-align: middle;
+}
+
+.prev ,.next{
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 25px;
+    height: 35px;
+    line-height: 35px;
+    background-color: rgb(248, 245, 245);
+    font-size: 20px;
+    cursor: pointer;
+    /* transition:background-color .2s; */
+}
+.prev{
+    left: 0;
+    border-radius: 0 18px 18px 0;
+    text-align: left;
+}
+.next{
+    right: 0;
+    border-radius: 18px 0 0 18px ;
+    text-align: right;
+}
+
+.banner-btn{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    width: 120px;
+    height: 15px;
+    
+}
+.banner-btn li{
+    float: left;
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgba(255,255,255,.4);
+    margin-right: 4px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.4);
+}
+.banner-btn .active{
+    position: relative;
+    top: -2px;
+    width: 8px;
+    height: 8px;
+    border: 3px solid  rgba(255,255,255,.4);
+    background-color: rgba(255,255,255,1);
+    cursor: pointer;/* 小手 */
+}
+
+/* 轮播图结束 */
+
+/* 基础计算器开始 */
+.basic-calculator{
+    width: 350px;
+    height: 450px;
+    float: right;
+    display: inline;
+    position:absolute;
+    background-color: #064408;
+    transform: translate(700px, -20px);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;  
+
+    }
+
+#display{
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 26px;
+}
+.buttons{
+    width: 300px;
+    height: 400px;
+    
+    margin-top: 10px;
+}
+button{
+    width: 70px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.delete{
+    width: 108px;
+}
+.equals{
+    width: 145px;
+}
+/* 基础计算器结束 */
+
+.content {
+    display: none;}
+.active {
+        display: block; /* 显示当前活动内容 */
+    }
+
+
+
+/* BMI篇章 */
+#bmidisplay{
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 26px;}
+.bmicontent{
+    overflow: hidden;
+    width: 1150px;
+    height: 600px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;
+    /* background-color: #86b687; */
+}
+.bmi-calculator{
+    width: 350px;
+    height: 400px;
+    float: right;
+    display: inline;
+    position:absolute;
+    background-color: #064408;
+    transform: translate(760px, -150px);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px;
+}
+
+.bmi-number-button{
+    width: 95px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.bmi-word{
+    width: 550px;
+    height: 180px;
+    
+    transform: translate(0px, 0px);
+    position: relative;
+    /* background-color: #f06102; */
+    font-size: 22px;
+    text-align: center;
+    line-height: 40px;
+    color: #064408;
+}
+/* BMI篇章结束 */
+
+
+
+
+/* 卡路里消耗篇开始 */
+.kalulicontent{
+    overflow: hidden;
+    width: 1150px;
+    height: 600px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;
+    /* background-color: #79758a; */
+}
+
+#kaluliconsumedisplay{
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 26px;}
+.kaluliconsumecontent{
+    overflow: hidden;
+    width: 1150px;
+    height: 600px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;
+    /* background-color: #86b687; */
+}
+.kaluliconsume-calculator{
+    width: 300px;
+    height: 400px;
+    float: right;
+    display: inline;
+    position:absolute;
+    background-color: #064408;
+    transform: translate(760px, -150px);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        
+}
+.kaluliconsume-number-button{
+    width: 70px;
+    height: 40px;
+    margin-top: 20px;
+}
+.kaluliconsume-delete-button{
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+}
+.kaluliconsume-equals{
+    width: 125px;
+    height: 40px;
+    margin-top: 20px;
+}
+.kaluliconsume-word{
+    width: 100%;
+    height: 140px;
+    
+    transform: translate(0px, 0px);
+    position: relative;
+    /* background-color: #f06102; */
+    font-size: 22px;
+    text-align: left;
+    line-height: 40px;
+    color: #064408;
+}
+.kaluli-choose-content{
+ 
+    width: 100%;
+    height: 500px;
+}
+.kaluli-choose-content>p{
+    font-size: 20px;
+    line-height: 40px;
+}
+.kaluli-choose-content>button{
+    float: left;
+    position: relative;
+    bottom:0%;
+    left:40%;
+}
+.daykaluli-display{
+    position: absolute;
+    float: left;
+    bottom:10%;
+    left:25%;
+}
+.daykaluli-display>p{font-size: 30px;
+   }
+.daykaluli-display>p>input{width: 140px;height: 32px;background-color: #c3d5c4;font-size:32px;
+}
+.kaluli-choose-content>p>input{width: 60px;height: 28px;background-color: #c3d5c4;font-size:20px;}
+
+/* 卡路里消耗篇结束 */
+
+
+
+
+/* 遗传计算器 */
+.yichuancontent{
+    position: relative;
+    left: 15%;
+
+}
+
+.type_choose{
+    overflow: hidden;
+    font-size: larger;
+    font-weight: bold;
+    border:2px solid rgb(33, 147, 18);
+    position: relative;
+    width: 70%;
+    margin-top: 0;
+    height: 30px;
+    background-color: #f0ea9c;
+}
+
+.di_tips{
+    float:left;
+    
+}
+
+.parents{
+   position: relative;
+   border:1px solid red;
+   margin-top:0;
+   width: 70%;
+   overflow: hidden;
+   height: 270px;
+   font-size: larger;
+   font-weight: bold;
+   background-color: #88b6c3;
+}
+
+#father{
+    float: left;
+    position: relative;
+    width: 300px;
+    height: 100px;
+    top:20%;
+    left:10%;
+    font-size: 18px;
+    }
+
+#mother{
+    float:right;
+    position: relative;
+    width: 300px;
+    height: 100px;
+    top:20%;
+    right: 10%;
+    font-size: 18px;
+}
+#children{
+    float:right;
+    position: relative;
+    width: 300px;
+    height: 100px;
+    top:50%;
+    right: 7%;
+    font-size: 20px;
+    
+}
+#di_submit{
+    position:absolute;
+    bottom: 0;
+    left:45%;
+}
+
+.gender_choice{
+    float: left;
+    width: 80%;
+    height: 80px;
+    position: relative;
+    top: 35px;
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    transform: translate(-115px, 0px);
+}
+#genderchoice-input{
+    font-size: 38px;
+    background-color: #c3d5c4;
+    width: 130px;
+}
+.di_shuoming{
+    width: 70%;
+    color:#064408;
+    position: relative;
+    top:-25px;
+}
+/* 遗传计算器结束 */
+
+
+
+
+
+/* 卡路里运动消耗计算器 */
+.kalulisportscontent{
+    overflow: hidden;
+    width: 1150px;
+    height: 600px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;
+}
+.kalulisports-word{
+    width: 100%;
+    height: 180px;
+    
+    transform: translate(0px, 0px);
+    position: relative;
+    /* background-color: #f06102; */
+    font-size: 20px;
+    text-align: left;
+    line-height: 40px;
+    color: #064408;
+}
+.kalulisports-word >a{
+    font-size: 24px;
+    margin-right: 30px;
+    color: #5105f4a7;
+}
+
+.sports-calculator{
+    width: 250px;
+    height: 365px;
+    float: right;
+    display: inline;
+    position:absolute;
+    background-color: #528454;
+    transform: translate(750px, -20px);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    }
+
+    .sports-calculator>.buttons>button{
+        width: 80px;
+    }
+    .sports-calculator>.buttons>.delete{
+        width: 122px;
+    }
+    .sports-calculator>input{
+        width: 248px;
+        height: 45px;
+    }
+   .kalulisportscontent>.kaihetiao-introduction{
+    font-size: 20px;
+    color: #588d9b;
+   }
+   
+   
+    .sports-introduction{
+        width: 700px;
+        height: 400px;
+        float: left;
+        position: absolute;
+        background-color:#b9d6bb;
+        transform: translate(0px, -20px);
+        display: none;
+    }
+.sports-img{
+    position: relative;
+    left: 20px;
+    width: 280px;
+    height: 330px;
+    transform: translate(0px, 25px);
+    float: left;
+}
+.sports-picture{
+    position: relative;
+    left: 20px;
+    width: 280px;
+    height: 330px;
+    transform: translate(0px, 25px);
+    float: left;
+}
+.sports-word-div{
+    float: right;
+   left: 50%;
+   right: 10px;
+   position: relative;
+   /* background-color: #064408; */
+   width: 380px;
+   height: 330px;
+   transform: translate(-360px, 25px);
+}
+.sports-word-div>p{
+    font-size: 20px;
+}
+.sportsactive{
+    display: block;
+}
+
+#nothing>p{
+    text-align: center;
+    margin-top: 25%;
+    font-size: 30px;
+}
+/* 卡路里运动消耗计算器结束 */
+
+/* 卡路里换算器 */
+.changecontent{
+    overflow: hidden;
+    width: 1150px;
+    height: 600px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;
+}
+
+.kalulichange-word{
+    width: 100%;  
+    text-align: center;
+    position: relative;
+    font-size: 24px;
+    line-height: 45px;
+    color: #064408;
+}
+.kalulichange-caculator-title1{
+    width: 260px;
+    height: 400px;
+    float: left;
+    left:15%;
+    top:20%;
+    position:absolute;
+}
+.kalulichange-calculator1{
+    width: 260px;
+    height: 365px;
+    background-color: #c0b981;   
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.kalulichange-caculator-title1>p{
+    text-align: center;
+    font-size: 26px;
+    color: #393838;
+    margin-bottom: 10px;
+}
+.kalulichange-caculator-title2{
+    width: 260px;
+    height: 400px;
+    float: right;
+    right:20%;
+    top:20%;
+    position:absolute;
+}
+.kalulichange-calculator2{
+    width: 260px;
+    height: 365px;
+    background-color: #7e649b;   
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.kalulichange-caculator-title2>p{
+    text-align: center;
+    font-size: 26px;
+    color: #393838;
+    margin-bottom: 10px;
+}
+.kalulichange-calculator2>.buttons>button{
+    width: 80px;
+}
+.kalulichange-calculator2>.buttons>.delete{
+    width: 122px;
+}
+.kalulichange-calculator2>input{
+    width: 248px;
+    height: 45px;
+}
+.kalulichange-calculator1>.buttons>button{
+    width: 80px;
+}
+.kalulichange-calculator1>.buttons>.delete{
+    width: 122px;
+}
+.kalulichange-calculator1>input{
+    width: 248px;
+    height: 45px;
+}
+/* 卡路里换算器结束 */
+
+/* 心理健康计算器开始 */
+.heartcontent{
+    overflow: hidden;
+    width: 1150px;
+    height: 600px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;
+    /* background-color: #618262; */
+}
+.heart_shuoming{
+    width: 100%;
+    color:#064408;
+    position: relative;
+    top:10px;
+}
+#heart-start{
+    position:absolute;
+    bottom: 5%;
+    left:45%;
+}
+.heart-main{
+    position: relative;
+    width: 100%;
+    height: 70%;
+    /* background-color: #7e649b; */
+    top:20px;
+}
+.heart-main>img{
+    left: 23%;
+   bottom: 5%;
+    position:absolute;
+    width: 600px;
+    height: 350px;  
+}
+.text-content{
+    position: relative;
+    left:20%;
+    top:1%;
+    display: none;
+    width: 60%;
+    height: 500px;
+    /* background-color: #b2c28e; */
+}
+.text-content>p{
+    font-size: 18px;
+    line-height: 42px;
+}
+.heart-options {
+    position: absolute;
+    left:40%
+}
+.nextpage{
+    position:absolute;
+    bottom: 0;
+    left:30%;
+}
+.lastpage{
+    position:absolute;
+    bottom: 0;
+    right:45%;
+}
+.heartresult-content{
+    overflow: hidden;
+    width: 1150px;
+    height: 600px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;
+    display: none;
+    /* background-color: #618262; */
+}
+.heartresult_shuoming{
+    width: 100%;
+    color:#064408;
+    position: relative;
+    top:10px;
+}
+#heart-gradeinput{
+    width: 75px;
+    height: 30px;
+    font-size: 26px;
+    background-color: #c3d5c4;
+    color: #7e649b;
+}
+#heart-resultinput{
+    width: 60px;
+    height: 30px;
+    font-size: 26px;
+    background-color: #c3d5c4;
+    color: #7e649b;
+}
+.heart-advice{
+    position: relative;
+    left:15%;
+    display: none;
+    width: 70%;
+    height: 400px;
+    /* background-color: #b2c28e; */
+    transform: translate(0px, 50px);
+}
+.heart-advice>p{
+    font-size: 20px;
+    line-height: 40px;
+    text-indent: 38px;
+    color: rgb(65, 61, 61);
+}
+
+/* 食物热量排序器开始 */
+.foodsortcontent{
+    overflow: hidden;
+    width: 1150px;
+    height: 600px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;
+    /* background-color: #618262; */
+}
+.seletor{
+    display: inline-block;
+  }
+  
+  #order{
+    position: relative;
+    left:20%;
+  }
+  
+  #heat{
+    position: relative;
+    left:35%;
+  }
+  
+  #select-top{
+    border:2px solid black;
+    width:100%;
+    height:30px;
+    font-weight: bold;
+  }
+  
+  .foodtype{
+    list-style: none;
+    line-height: 30px;
+  }
+  .foodtype>li{
+    display: inline;
+
+   
+  }
+  #sort-display{
+    width:1500px;
+    height: auto;
+    font-size: 20px;
+    color:black;
+  }
+  
+  .foodheat{
+    color: rgb(218, 140, 22);
+    display: none;
+  }
+.highlow{
+    width: 100px;
+    height: 30px;
+}
+
+
+.seletor2{
+    display: inline-block;
+  }
+  
+  
+  
+  #select-top2{position: relative;
+    left:15%; 
+    transform: translate(0px, -35px);
+    border:2px solid black;
+    width:70%;
+    height:30px;
+    font-weight: bold;
+  }
+  
+  .foodtype2{
+    list-style: none;
+  }
+  
+  .foodtype2>li{
+    display: inline;font-size: 20px;
+  }
+  
+  .yingyangsu{
+    color: rgb(16, 173, 5);
+    display: none;
+  }
+  
+  #food-content-page2{
+    position: relative;
+    left:15%;
+  }
+ 
+  #yysresult{
+    width: auto;
+    height: 40px;
+    background-color: #b9d6bb;
+    font-size: 22px;
+  }
+  
+  #chapterselector{
+    float: right;
+    font-size: 16px;
+  }
+  
+  .yybottom2{
+    position: relative;
+    left:15%;
+    width: 80%;
+    height:150px;
+    
+    transform: translate(0px, 100px);
+  }
+  
+  #yysselector{
+   position: relative;
+   top:30px;
+  
+  }
+  
+  #yysselect{
+    width: 90px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  #yysselector>input{
+    width:auto;
+    height: 80px;
+    background-color: #b9d6bb;
+    font-size: 20px;
+  }
+  
+  
+  #yyschapter{position: relative;
+    left:15%;
+    width: 70%;
+    height: 100px;
+    display: none;
+  }
+  .yingyang-bottom{
+    position: absolute;
+    width: 70%;
+    height: 200px;
+    left:0%;
+   
+  }
+  .yingyang-bottom>input{
+    position: absolute;
+    width: 50px;height: 35px;
+    text-align: center;
+    left:45%
+  }
+  #yyschapter>p{
+     font-size: 24px;
+     color: #6f4a9a;
+  }
+  /*  */
+  .healthylifecontent{
+
+  overflow: hidden;
+    width: 1150px;
+    height: 550px;
+    margin: 0 auto;
+    transform: translate(0px, -35px);
+    position: relative;   
+}
+.healthylife-main{
+    position: relative;
+    width: 1150px;
+    height: 450px;
+    /* background-color: #a1b3a1; */
+    transform: translate(0px, 50px);
+}
+#hlaselector{float: left;
+    position: relative;
+    top:20%;
+    width: 300px;
+    font-size: 28px;
+    height: 50px;
+    left: 10%;
+    background-color: #b6d3b7;
+}
+.healthylife-main>input{float: left;
+    position: relative;
+    top:20%;
+    width: 550px;
+    font-size: 28px;
+    height: 50px;
+    left:20%;
+    background-color: #b6d3b7;
+}
+.hlequal{
+    position: relative;
+    float: right;
+    top:20%;
+    transform: translate(-660px, 0px);
+}
+
+#hleresult{
+    font-size: 28px;
+    position: relative;
+    left: 20%;
+    background-color: #b6d3b7;
+}
