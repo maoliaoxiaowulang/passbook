@@ -1016,4 +1016,24 @@ button{
     position: relative;
     left: 20%;
     background-color: #b6d3b7;
+    transform: translate(0px, 50px);
+}
+.hlpicture{
+    position:absolute;
+    float: left;
+    top:32%;
+    left:10%;
+    width: 300px;
+    height: 300px;
+    display: none;
+    /* background-color: #064408; */
+}
+.hlpicture>img{
+    width: 300px;
+    height: 300px;
+}
+
+.hlactive{
+    display: block;
+    background-color: #b6c9b6;
 }

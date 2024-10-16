@@ -698,14 +698,14 @@
               <form class="seletor" id="food-type-seletor">
                 食物种类:
                 <select id="foodselector">
-                  <option class="ft" onclick="showtype()" value="all">全部</option>
-                  <option class="ft" onclick="showtype()" value="meat">肉类</option>
-                  <option class="ft" onclick="showtype()" value="fruit">水果</option>
-                  <option class="ft" onclick="showtype()" value="veg">蔬菜</option>
-                  <option class="ft" onclick="showtype()" value="zhushi">主食</option>
-                  <option class="ft" onclick="showtype()" value="milk">奶类</option>
-                  <option class="ft" onclick="showtype()" value="sugar">糖类</option>
-                  <option class="ft" onclick="showtype()" value="other">其他</option>
+                  <option class="ft" onclick="showtype5()" value="all">全部</option>
+                  <option class="ft" onclick="showtype5()" value="meat">肉类</option>
+                  <option class="ft" onclick="showtype5()" value="fruit">水果</option>
+                  <option class="ft" onclick="showtype5()" value="veg">蔬菜</option>
+                  <option class="ft" onclick="showtype5()" value="zhushi">主食</option>
+                  <option class="ft" onclick="showtype5()" value="milk">奶类</option>
+                  <option class="ft" onclick="showtype5()" value="sugar">糖类</option>
+                  <option class="ft" onclick="showtype5()" value="other">其他</option>
                 </select>
               </form>
               <form class="seletor" id="order">
@@ -1097,20 +1097,31 @@
     </div>
     <div class="healthylife-main">
         <select id="hlaselector">
+            <option class="hla" onclick="showtype1(0)" value="al">选择良好的生活习惯</option>
             <option class="hla" onclick="showtype1(1)" value="all">足够的睡眠时间</option>
             <option class="hla" onclick="showtype1(2)" value="meat">适度的锻炼</option>
             <option class="hla" onclick="showtype1(3)" value="fruit">合理的饮食时间</option>
-            <option class="hla" onclick="showtype1(4)" value="veg">蔬菜</option>
-            <option class="hla" onclick="showtype1(5)" value="zhushi">主食</option>
-            <option class="hla" onclick="showtype1(6)" value="milk">奶类</option>
-            <option class="hla" onclick="showtype1(7)" value="fruit">水果</option>
+            <option class="hla" onclick="showtype1(4)" value="veg">保持社交联系</option>
+            <option class="hla" onclick="showtype1(5)" value="zhushi">减少屏幕时间</option>
+            <option class="hla" onclick="showtype1(6)" value="milk">定期休息与放松</option>
+            <option class="hla" onclick="showtype1(7)" value="fruit">保持良好水分摄入</option>
 
           </select>
 
         <div class="hlequal">
             <p style="font-size: 40px;color: black;">=</p>
         </div>
-          <textarea  id="hleresult" cols="20" rows="8"></textarea>
+          <textarea  id="hleresult" cols="20" rows="6"disabled></textarea>
+
+        <div class="hlpicture hlactive"id="hlp-white"></div>
+        <div class="hlpicture"id="hlp1" style="background-color: white;"><img src="./images/2.1.webp" alt="图片"></div>
+        <div class="hlpicture"id="hlp2"><img src="./images/2.2.webp" alt="图片"></div>
+        <div class="hlpicture"id="hlp3"><img src="./images/2.3.jpg" alt="图片"></div>
+        <div class="hlpicture"id="hlp4"><img src="./images/2.4.jpg" alt="图片"></div>
+        <div class="hlpicture"id="hlp5"><img src="./images/2.5.webp" alt="图片"></div>
+        <div class="hlpicture"id="hlp6"><img src="./images/2.6.jpg" alt="图片"></div>
+        <div class="hlpicture"id="hlp7"><img src="./images/2.7.webp" alt="图片"></div>
+
     </div>
     </div>
     </div>

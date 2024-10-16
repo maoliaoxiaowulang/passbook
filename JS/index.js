@@ -191,63 +191,36 @@ function deletekaluliconsumeLast() {//删除
 }
 
 
-//要求保证每一项按钮记录前一项的数据
-    var kaluliconsumegenderRecord=0;
-     var kaluliconsumeheightRecord=0;
-    var kaluliconsumeweightRecord=0;
-    var kaluliconsumeageRecord=0;
-    function kaluliconsumeheight(){
-        const kaluliconsumedisplay = document.getElementById('kaluliconsumedisplay');
-        kaluliconsumegenderRecord=Number(kaluliconsumedisplay.value);
-        function a(){if(kaluliconsumeweightRecord>3){alert("输入数据有误")} }
-        document.getElementById('kaluliconsumedisplay').value = '';
-        }
-function kaluliconsumeweight(){
-    const kaluliconsumedisplay = document.getElementById('kaluliconsumedisplay');
-    kaluliconsumeheightRecord=Number(kaluliconsumedisplay.value);
-    function a(){if(kaluliconsumeweightRecord<100){alert("输入数据有误")} }
-    document.getElementById('kaluliconsumedisplay').value = '';
-    }
-function kaluliconsumeage(){
-        const kaluliconsumedisplay = document.getElementById('kaluliconsumedisplay');
-        kaluliconsumeweightRecord=Number(kaluliconsumedisplay.value);
-        function a(){if(kaluliconsumeweightRecord<100){alert("输入数据有误")} }
-        document.getElementById('kaluliconsumedisplay').value = '';
-        }
-function kaluliconsumesportscondition(){
-    const kaluliconsumedisplay = document.getElementById('kaluliconsumedisplay');
-        kaluliconsumeageRecord=Number(kaluliconsumedisplay.value);
-        function a(){if(kaluliconsumeweightRecord>3){alert("输入数据有误")} }
-        document.getElementById('kaluliconsumedisplay').value = '';
-}
 
-
-const kaluligender=document.getElementsByName('kaluli-gender')
-const kaluliheight=document.getElementsByName('kaluli-height')
-const kaluliweight=document.getElementsByName('kaluli-weight')
-const kaluliage=document.getElementsByName('kaluli-age')
-const kaluliheightnum=Number(kaluliheight[0].value)
-const kaluliweightnum=Number(kaluliweight[0].value)
-const kaluliagenum=Number(kaluliage[0].value)
-const choose1=document.getElementById('kaluli-sportscondition1')
-const choose2=document.getElementById('kaluli-sportscondition2')
-const choose3=document.getElementById('kaluli-sportscondition3')
-const choose4=document.getElementById('kaluli-sportscondition4')
 
 function kaluliconsumeCalculate(){ 
    const kaluliconsumedisplay=document.getElementById('kaluli-dailyconsume')
     
+var kaluligender=document.getElementsByName('kaluli-gender')
+var kaluliheight=document.getElementsByName('kaluli-height')
+var kaluliweight=document.getElementsByName('kaluli-weight')
+var kaluliage=document.getElementsByName('kaluli-age')
+var kaluliheightnum=Number(kaluliheight[0].value)
+var kaluliweightnum=Number(kaluliweight[0].value)
+var kaluliagenum=Number(kaluliage[0].value)
+var aaachoose1=document.getElementById('kaluli-sportscondition1')
+var aaachoose2=document.getElementById('kaluli-sportscondition2')
+var aaachoose3=document.getElementById('kaluli-sportscondition3')
+var aaachoose4=document.getElementById('kaluli-sportscondition4')
+
+
+
    var kaluliconsumedcoefficient=0;
-     if(choose1.checked==1){kaluliconsumedcoefficient=1.1}
-     else if(choose2.checked==1){kaluliconsumedcoefficient=1.3}
-     else if(choose3.checked==1){kaluliconsumedcoefficient=1.5}
+     if(aaachoose1.checked==1){kaluliconsumedcoefficient=1.1}
+     else if(aaachoose2.checked==1){kaluliconsumedcoefficient=1.3}
+     else if(aaachoose3.checked==1){kaluliconsumedcoefficient=1.5}
      else{kaluliconsumedcoefficient=1.7}
 
     if(kaluligender[0].checked==1)
-    {kaluliconsumedisplay.value=String(((10*kaluliweightnum+6.25*kaluliheightnum-5*kaluliagenum+5)*kaluliconsumedcoefficient).toFixed(2))}
+    {kaluliconsumedisplay.value=((10*kaluliweightnum+6.25*kaluliheightnum-5*kaluliagenum+5)*kaluliconsumedcoefficient).toFixed(2)}
     else 
-    {kaluliconsumedisplay.value=String(((10*kaluliweightnum+6.25*kaluliheightnum-5*kaluliagenum-161)*kaluliconsumedcoefficient).toFixed(2))}
-    // console.log
+    {kaluliconsumedisplay.value=((10*kaluliweightnum+6.25*kaluliheightnum-5*kaluliagenum-161)*kaluliconsumedcoefficient).toFixed(2)}
+    
 }
 //卡路里平均消耗计算器结束
 
@@ -521,7 +494,7 @@ var fh=document.getElementsByClassName("foodtype");
 var fc=document.getElementsByClassName("food-checkbox");
 var sf=document.getElementsByClassName("specific-food");
 
-function showtype(){
+function showtype5(){
     var index=document.getElementById("foodselector").selectedIndex;
     if(foodtype[index].getAttribute("value")=="all"){
         for(var i=0;i<foodcontent.length;i++){foodcontent[i].style.display="block"}
@@ -696,13 +669,23 @@ function eleselect(){
 
 
 function showtype1(value){   
+    const sportsintroductions = document.querySelectorAll('.hlpicture');
+    sportsintroductions.forEach(sportsintroduction => {
+        sportsintroduction.classList.remove('hlactive');});
+var h0=document.getElementById('hlp-white');h0.classList.add('hlactive');
     var result=document.getElementById('hleresult');
-    if (value==1){result.value="身体修复、提高免疫力、增强记忆力和学习能力"}
-    else if (value==2){result.value="促进血液循环、增强心肺功能，减轻压力、改善情绪"}
-    else if (value==3){result.value="稳定血糖水平、保护肠胃、控制体重、改善睡眠质量"}
-    else if (value==4){result.value="提供维生素和矿物质、改善肠胃功能、促进健康"}
-    else if (value==5){result.value="提供能量、维持肌肉功能、促进肠胃消化、保持血糖水平"}
-    else if (value==6){result.value="增强免疫力、补充钙质、改善心血管健康"}
-    else if (value==7){result.value="提高免疫力、补充营养元素、促进肠胃消化"}
     
+    if (value==1){result.value="身体修复、提高免疫力、增强记忆力和学习能力";var h1=document.getElementById('hlp1');h1.classList.add('hlactive');}
+    else if (value==0){result.value="";}
+    else if (value==2){result.value="促进血液循环、增强心肺功能，减轻压力、改善情绪";var h2=document.getElementById('hlp2');h2.classList.add('hlactive');}
+    else if (value==3){result.value="稳定血糖水平、保护肠胃、控制体重、改善睡眠质量";var h3=document.getElementById('hlp3');h3.classList.add('hlactive');}
+    else if (value==4){result.value="定期与家人和朋友交流，参与社交活动。良好的社交关系有助于改善情绪，减少焦虑和抑郁的风险。";var h4=document.getElementById('hlp4');h4.classList.add('hlactive');}
+    else if (value==5){result.value="限制每天使用电子设备（如手机、电脑）的时间，特别是在睡前。减少屏幕时间有助于提高睡眠质量，减轻眼睛疲劳，并促进面对面的互动。";var h5=document.getElementById('hlp5');h5.classList.add('hlactive');}
+    else if (value==6){result.value="工作或学习期间定期休息，做一些放松的活动，如深呼吸、冥想或伸展运动。适当的休息可以提高生产力，减轻压力，改善心理状态。";var h6=document.getElementById('hlp6');h6.classList.add('hlactive');}
+    else if (value==7){result.value="每天饮用足够的水（大约8杯），可以帮助身体维持正常的生理功能。水分充足有助于消化、提高能量水平并促进皮肤健康。";var h7=document.getElementById('hlp7');h7.classList.add('hlactive');}
+    
+
 }
+
+    
+    
